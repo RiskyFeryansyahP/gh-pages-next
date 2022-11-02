@@ -30,6 +30,6 @@ jobs:
           github_token: ${{ secrets.TOKEN_GITHUB }}
           publis_dir: ./out
           publish_branch: gh-pages
-          orphan: true
+          force_orphan: true
 
 
