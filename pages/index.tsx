@@ -12,7 +12,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hello Olivia Diaz Fauziah
+          Hello World!
         </h1>
       </main>
     </div>
