@@ -29,13 +29,7 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN_GITHUB }}
           publis_dir: ./out
-          publish_branch: testing
+          publish_branch: gh-pages
           force_orphan: true
-
-      - name: Debugging
-        run: |
-          ls
-          cd out
-          ls
 
 
