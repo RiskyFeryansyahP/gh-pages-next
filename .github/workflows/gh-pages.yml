@@ -2,7 +2,9 @@
 name: GitHub Pages Deployment
 
 on:
-  pull_request:
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
@@ -16,22 +18,18 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Testing shell script
+      - name: Doing yarn install, yarn build and yarn export
         run: |
-          echo "Hello Ndoro Oliv!"
+          yarn install
+          yarn build
+          yarn export
 
-      # - name: Doing yarn install, yarn build and yarn export
-      #   run: |
-      #     yarn install
-      #     yarn build
-      #     yarn export
-
-      # - name: Deploy to GitHub Actions
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.TOKEN_GITHUB }}
-      #     publis_dir: ./out
-      #     publish_branch: gh-pages
-      #     orphan: true
+      - name: Deploy to GitHub Actions
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.TOKEN_GITHUB }}
+          publis_dir: ./out
+          publish_branch: gh-pages
+          orphan: true
 
 
