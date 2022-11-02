@@ -1,0 +1,37 @@
+# name of github workflows
+name: GitHub Pages Deployment
+
+on:
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout v3
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+
+      - name: Testing shell script
+        run: |
+          echo "Hello Ndoro Oliv!"
+
+      # - name: Doing yarn install, yarn build and yarn export
+      #   run: |
+      #     yarn install
+      #     yarn build
+      #     yarn export
+
+      # - name: Deploy to GitHub Actions
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.TOKEN_GITHUB }}
+      #     publis_dir: ./out
+      #     publish_branch: gh-pages
+      #     orphan: true
+
+
